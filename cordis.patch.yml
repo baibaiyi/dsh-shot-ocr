@@ -1,0 +1,32 @@
+# Bundle patch layer: the row loads ./index.js as the Host half (a plain Cordis
+# plugin); the `dsh.client` declaration in package.json makes the Web app load
+# ./client.js as the browser half.
+#
+# Every value below is optional — the plugin's own defaults apply when omitted.
+# Override them here (this file is the profile's patch source) and restart or
+# let HMR pick the change up.
+- insert:
+    - id: dsh-shot-ocr
+      name: dsh-shot-ocr
+      config:
+        # 总开关：关闭后快捷键和按钮都不再截图。
+        enabled: true
+        # Register the system-wide hotkey (the listener below stays resident).
+        globalHotkey: true
+        # System-wide key that captures while any app is in front.
+        hotkey: Ctrl+Alt+S
+        # region | fullscreen | window | cursor
+        mode: region
+        # text = 识别文字后填入，image = 直接把截图插入输入框
+        output: text
+        # Upscale before OCR; 2 is a good balance of accuracy and speed.
+        scale: 2
+        # BCP-47 tag, e.g. zh-Hans-CN; empty follows the Windows user profile.
+        language: ''
+        # Minimise the Harness window for the in-app shortcut's capture.
+        hideApp: true
+        # true = send immediately, false = leave the text in the draft.
+        autoSend: false
+        prefix: ''
+        suffix: ''
+        maxChars: 20000
