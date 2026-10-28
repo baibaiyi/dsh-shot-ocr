@@ -1,7 +1,6 @@
 {
   "name": "dsh-shot-ocr",
   "version": "1.0.0",
-  "private": true,
   "description": "Screenshot the desktop with a hotkey, recognise its text, and drop it into the DeepSeek Harness message box.",
   "type": "module",
   "icon": "icon.svg",
@@ -38,5 +37,16 @@
     "screenshot",
     "ocr"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baibaiyi/dsh-shot-ocr.git"
+  },
+  "homepage": "https://github.com/baibaiyi/dsh-shot-ocr#readme",
+  "bugs": {
+    "url": "https://github.com/baibaiyi/dsh-shot-ocr/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
