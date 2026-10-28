@@ -83,14 +83,23 @@ Host 插件：监视 inbox → /api/dsh-shot/pending（图片转 base64）
 
 ## 安装 / 卸载
 
+从 GitHub 安装（推荐）：
+
 ```powershell
-# 安装（本目录已安装为 link）
-dsh plugin --profile desktop add link:D:/deepseek/日用/dsh-shot-ocr
+# 装进你的 profile（换成 web / desktop 等实际 profile 名）
+dsh plugin --profile desktop add github:baibaiyi/dsh-shot-ocr
+
 # 卸载
 dsh plugin --profile desktop remove dsh-shot-ocr
 ```
 
 还需要把 `dsh-shot-ocr` 加入 profile `package.json` 的 `dsh.profile.bundles`，或在 **插件** 页面启用。
+
+本地开发时可以直接链接目录：
+
+```powershell
+dsh plugin --profile desktop add link:D:/path/to/dsh-shot-ocr
+```
 
 修改插件自身源码后，HMR 只重载配置、不监听插件源码：需要在插件页把本插件关掉再打开，或重启 Harness。
 
